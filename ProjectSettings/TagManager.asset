@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Road
+    uniqueID: 2652521033
+    locked: 0
+  - name: Cars
+    uniqueID: 3693815161
+    locked: 0
