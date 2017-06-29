@@ -20,7 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4987443131260372}
   - component: {fileID: 212206649098840666}
-  - component: {fileID: 114335634910000050}
+  - component: {fileID: 114697302043848102}
+  - component: {fileID: 114136729323050990}
   m_Layer: 0
   m_Name: Bulldozer
   m_TagString: Untagged
@@ -35,13 +36,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1911331037905664}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.0607332, y: -11.631752, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114335634910000050
+--- !u!114 &114136729323050990
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -49,7 +50,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1911331037905664}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d2365f69a11a28468b8bd02b9f327a3, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ddde812c41d6b446b8192773fb7432f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motor: {fileID: 0}
+--- !u!114 &114697302043848102
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1911331037905664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac38e145cc3e9ab41887c2642d9865f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   forwardSpeed: 6
@@ -84,10 +97,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: 00d968f10575d954f8688cbe79580c2c, type: 3}
+  m_SortingLayerID: -601152135
+  m_SortingLayer: 4
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300010, guid: 7a5dde947ce78e34f8cd32a4732c3af2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

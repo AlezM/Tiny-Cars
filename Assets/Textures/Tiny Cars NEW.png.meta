@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7a5dde947ce78e34f8cd32a4732c3af2
-timeCreated: 1498746311
+timeCreated: 1498765216
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -11,7 +11,7 @@ TextureImporter:
     21300008: SmallCar_blue
     21300010: Buldozer
     21300012: Rink
-    21300014: Midle_road
+    21300014: MiddleRoad
     21300016: LineMarking
     21300018: DottedMarking
     21300020: TwoLineMarking
@@ -141,11 +141,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 50
+        y: 51
         width: 6
-        height: 13
+        height: 12
       alignment: 9
-      pivot: {x: 0.5, y: 0.175}
+      pivot: {x: 0.5, y: 0.18}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -154,11 +154,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 9
-        y: 50
+        y: 51
         width: 6
-        height: 13
+        height: 12
       alignment: 9
-      pivot: {x: 0.5, y: 0.175}
+      pivot: {x: 0.5, y: 0.18}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -189,12 +189,12 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Midle_road
+      name: MiddleRoad
       rect:
         serializedVersion: 2
-        x: 36
+        x: 37
         y: 50
-        width: 12
+        width: 11
         height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -245,9 +245,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 36
-        y: 21
+        y: 20
         width: 11
-        height: 11
+        height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

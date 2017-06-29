@@ -44,6 +44,15 @@ TagManager:
   - name: Road
     uniqueID: 2652521033
     locked: 0
+  - name: RoadHoles
+    uniqueID: 2159319211
+    locked: 0
+  - name: RoadSigns
+    uniqueID: 601610799
+    locked: 0
   - name: Cars
     uniqueID: 3693815161
+    locked: 0
+  - name: UpperSigns
+    uniqueID: 2430194673
     locked: 0
