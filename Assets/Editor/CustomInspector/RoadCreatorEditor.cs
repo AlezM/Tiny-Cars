@@ -16,6 +16,7 @@ public class RoadCreatorEditor : Editor {
         RoadCreator myScript = (RoadCreator)target;
         if (GUILayout.Button("Create Road") || automaticUpdate) {
             myScript.CreateRoad();
+            myScript.Start();
         }
 
         if (GUILayout.Button("Clean up!"))

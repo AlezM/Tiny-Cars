@@ -16,13 +16,14 @@ public class RoadCreator : MonoBehaviour {
 
     [Header("Settings")]
     public Transform detailsContainer;
+    [Range(1, 100)]
     public int roadLength = 1;
     [Range(1, 5)]
     public int roadWidth = 1;
 
     Vector3[] spawnPoints;
 
-    void Start() {
+    public void Start() {
         CreateSpawns();
         FindObjectOfType<CarSpawner>().spawnPoints = spawnPoints;
     }

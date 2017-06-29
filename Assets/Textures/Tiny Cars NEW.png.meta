@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7a5dde947ce78e34f8cd32a4732c3af2
-timeCreated: 1498765216
+timeCreated: 1498766871
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -141,7 +141,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 51
+        y: 50
         width: 6
         height: 12
       alignment: 9
@@ -153,8 +153,8 @@ TextureImporter:
       name: SmallCar_blue
       rect:
         serializedVersion: 2
-        x: 9
-        y: 51
+        x: 8
+        y: 50
         width: 6
         height: 12
       alignment: 9
@@ -167,7 +167,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 31
+        y: 30
         width: 9
         height: 18
       alignment: 9
@@ -180,7 +180,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 17
+        y: 16
         width: 9
         height: 13
       alignment: 9
