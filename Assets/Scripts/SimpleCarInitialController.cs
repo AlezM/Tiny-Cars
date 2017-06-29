@@ -16,7 +16,10 @@ public class SimpleCarInitialController : MonoBehaviour {
 		float hInput = Input.GetAxis ("Horizontal");
 		float vInput = Input.GetAxis ("Vertical");
 
-		transform.Translate ( transform.up * vInput * ((vInput > 0)? forwardSpeed: backwardSpeed) * 0.01f * (1 - 0.2f * Mathf.Abs(hInput)), Space.World);
+        if (Input.touchCount > 0)
+            vInput = 0.5f * Input.touchCount;
+
+        transform.Translate ( transform.up * vInput * ((vInput > 0)? forwardSpeed: backwardSpeed) * 0.01f * (1 - 0.2f * Mathf.Abs(hInput)), Space.World);
 		transform.Rotate (Vector3.back * hInput * vInput * rotationSpeed);
 	}
 }
