@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4608645623866534}
   - component: {fileID: 212650873176285086}
   - component: {fileID: 61834302922031914}
+  - component: {fileID: 50566951261373674}
   - component: {fileID: 114195241585640786}
   - component: {fileID: 114203311531200796}
   m_Layer: 0
@@ -43,6 +44,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50566951261373674
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1210508686298970}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &61834302922031914
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -79,9 +100,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac38e145cc3e9ab41887c2642d9865f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardSpeed: 10
+  forwardSpeed: 15
   backwardSpeed: 4
   rotationSpeed: 7
+  usePhysic: 0
 --- !u!114 &114203311531200796
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -94,6 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   motor: {fileID: 0}
+  forwardRayOffset: 1
 --- !u!212 &212650873176285086
 SpriteRenderer:
   m_ObjectHideFlags: 1

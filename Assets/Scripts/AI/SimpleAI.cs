@@ -6,6 +6,8 @@ public class SimpleAI : MonoBehaviour {
 
     public VehicleMotor motor;
     public float forwardRayOffset = 1f;
+    Vector3[] roadLines;
+    int myRoadLine;
 
 	void Start () {
         motor = GetComponent<VehicleMotor>();
@@ -38,6 +40,8 @@ public class SimpleAI : MonoBehaviour {
                     float s = vM.GetSpeed() / motor.forwardSpeed;
                     motor.SetSpeed(s);
                 }
+                else
+                    motor.SetSpeed(0);
             }
         }
         else {
@@ -45,9 +49,14 @@ public class SimpleAI : MonoBehaviour {
         }
     }
 
-    void OnDrawGizmos() {
+    void OnDrawGizmos () {
         Gizmos.color = Color.green;
         Gizmos.DrawLine(transform.position + transform.up * forwardRayOffset,
            transform.position + transform.up * (forwardRayOffset + 1f));
+    }
+
+    public void SetUp (Vector3[] _roadLines, int _myRoadLine) {
+        roadLines = _roadLines;
+        myRoadLine = _myRoadLine;
     }
 }
