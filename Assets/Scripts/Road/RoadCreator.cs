@@ -18,7 +18,7 @@ public class RoadCreator : MonoBehaviour {
     public Transform detailsContainer;
     [Range(1, 100)]
     public int roadLength = 1;
-    [Range(1, 5)]
+    [Range(1, 10)]
     public int roadWidth = 1;
 
     Vector3[] spawnPoints;
