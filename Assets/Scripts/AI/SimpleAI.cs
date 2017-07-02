@@ -66,12 +66,12 @@ public class SimpleAI : MonoBehaviour {
         //Rotation
         float distance = transform.position.x - roadLines[myRoadLine].x;
         if (Mathf.Abs(distance) > 0.1f) {
-            float deservedRotation = 45f * 2 / Mathf.PI * Mathf.Asin(Mathf.Clamp(distance, -1f, 1f)) * Mathf.Sign(transform.up.y);
-            float hInput = Mathf.Lerp(1, -1,
-                (90 + deservedRotation + Mathf.Sign(transform.up.x) * Vector3.Angle(transform.up, roadDirection)) / 180f);
+        //    float deservedRotation = 45f * 2 / Mathf.PI * Mathf.Asin(Mathf.Clamp(distance, -1f, 1f)) * Mathf.Sign(transform.up.y);
+        //    float hInput = Mathf.Lerp(1, -1,
+        //        (90 + deservedRotation + Mathf.Sign(transform.up.x) * Vector3.Angle(transform.up, roadDirection)) / 180f);
 
             Vector2 deservedDiraction = new Vector2(Mathf.Clamp(distance, -1f, 1f), 1);
-            hInput = Mathf.Lerp(1, -1, Vector2.Angle(transform.up, deservedDiraction) / 180f);
+            float hInput = deservedDiraction.x;// Mathf.Lerp(1, -1, Vector2.Angle(transform.up, deservedDiraction) / 180f);
 
             motor.SetRotation(hInput);
         }
