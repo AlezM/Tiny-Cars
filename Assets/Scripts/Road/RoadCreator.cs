@@ -88,13 +88,13 @@ public class RoadCreator : MonoBehaviour {
         roadDetail_GO.name = "LeftLine" + i.ToString();
     }
 
+
+    //Нумерация идет с права на лево, левая полоса - самый большой индекс;
     void CreateSpawns() {
-        //Spawns
         spawnPoints = new Vector3[roadWidth * 2];
-        for (int i = 0; i < roadWidth; i++)
-        {
-            spawnPoints[i] = new Vector3( -((i + 1) * spriteX - 0.05f), roadLength * spriteY / 2, 0 );
-            spawnPoints[i + roadWidth] = new Vector3((i + 1) * spriteX - 0.05f, -roadLength * spriteY / 2, 0);
+        for (int i = 0; i < roadWidth; i++) {
+            spawnPoints[i] = new Vector3( -((i + 1) * spriteX - 0.05f), roadLength * spriteY / 2, 0 );              //Left
+            spawnPoints[2*roadWidth - i - 1] = new Vector3((i + 1) * spriteX - 0.05f, -roadLength * spriteY / 2, 0);  //Right
         }
     }
 }

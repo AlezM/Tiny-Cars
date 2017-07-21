@@ -10,7 +10,7 @@ public class CarSpawner : MonoBehaviour {
     [Header("Settings")]
     public float spawnDelay = 3f;
     public float spawnTimeRate = 1f;
-    float srt;
+    float str;
 
     public Transform vehicleContainer;
 
@@ -18,7 +18,7 @@ public class CarSpawner : MonoBehaviour {
     public Vector3[] spawnPoints = null;    
 
     void Start () {
-        float srt = spawnTimeRate;
+        float str = spawnTimeRate;
         InvokeRepeating("SpawnCar", spawnDelay, spawnTimeRate);
     }
 
@@ -36,12 +36,13 @@ public class CarSpawner : MonoBehaviour {
                 ((spawnPointIndex + 1 > spawnPoints.Length/2)? Quaternion.Euler(0,0,0): Quaternion.Euler(0, 0, 180)),
                 vehicleContainer
             );
+            vehicle_GO.GetComponent<SimpleAI>().SetUp(spawnPoints, spawnPointIndex);
         }
 
         //If timerate was changed, we want to restart our Invoke
-        if (spawnTimeRate != srt) {
+        if (spawnTimeRate != str) {
             CancelInvoke("SpawnCar");
-            srt = spawnTimeRate;
+            str = spawnTimeRate;
             InvokeRepeating("SpawnCar", 0, spawnTimeRate);
         }
     }

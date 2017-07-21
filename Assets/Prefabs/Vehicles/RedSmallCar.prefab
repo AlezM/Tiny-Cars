@@ -117,6 +117,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   motor: {fileID: 0}
   forwardRayOffset: 1
+  myRoadLine: 0
+  changeLine: 0
 --- !u!212 &212650873176285086
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -157,3 +159,4 @@ SpriteRenderer:
   m_Size: {x: 0.8, y: 1.3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1

@@ -86,8 +86,10 @@ MonoBehaviour:
     type: 2}
   middleRoadPrefab: {fileID: 1441038901873506, guid: d0608cced6b4c9944b55a7dc37f23c78,
     type: 2}
+  lineRoadMarking: {fileID: 0}
   dotedRoadMarking: {fileID: 1189699834780948, guid: d8b3fd7377cebea4b9a8da99687e43de,
     type: 2}
+  sideRoadPrefab: {fileID: 0}
   detailsContainer: {fileID: 4223111147289232}
   roadLength: 20
   roadWidth: 5
