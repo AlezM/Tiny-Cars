@@ -11,6 +11,7 @@ public class SimpleCarInitialController : MonoBehaviour {
     Vector2 touchBeginPos = Vector2.zero;
 
 	void Update () {
+        if () ;
 		float hInput = Input.GetAxis ("Horizontal");
 		float vInput = Input.GetAxis ("Vertical");
 
