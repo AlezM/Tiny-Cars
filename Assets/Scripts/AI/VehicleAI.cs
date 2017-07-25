@@ -13,6 +13,8 @@ public class VehicleAI : MonoBehaviour {
 	int movingDiraction = 1; // Forward = 1, backward = -1;
 
 	void Start () {
+		Debug.Log("Hello creator!");
+
 		motor = GetComponent<VehicleMotor> ();
 		if (transform.GetChild (0) != null)
 			vehiclePivot = transform.GetChild (0);
@@ -29,9 +31,12 @@ public class VehicleAI : MonoBehaviour {
 
 	void Movement () {
 		float distance = Vector3.Distance (targetPosition, vehiclePivot.position);
-		movingDiraction = (Vector3.Angle(transform.up, (targetPosition - vehiclePivot.position).normalized) < 90 )? 1 : -1;
+		float speed = 1; //TODO
+
+		movingDiraction = (Vector3.Angle(transform.up, (targetPosition - vehiclePivot.position).normalized) < 100 )? 1 : -1;
 		if (distance > 0.2f) {
-			motor.SetSpeed (Mathf.Clamp01 (distance) * movingDiraction);
+			motor.SetSpeed (speed * movingDiraction);
+			targetReached = false;
 		} 
 		else {
 			motor.SetSpeed (0);
@@ -66,5 +71,8 @@ public class VehicleAI : MonoBehaviour {
 			Gizmos.color = Color.green;		
 
 		Gizmos.DrawSphere (targetPosition, 0.1f);
+
+		Gizmos.color = Color.green;
+		Gizmos.DrawLine (vehiclePivot.position, targetPosition);
 	}
 }

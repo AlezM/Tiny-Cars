@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7a5dde947ce78e34f8cd32a4732c3af2
-timeCreated: 1500476771
+timeCreated: 1500900532
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -16,6 +16,7 @@ TextureImporter:
     21300018: DottedMarking
     21300020: TwoLineMarking
     21300022: MainRoad
+    21300024: Wheel
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -130,7 +131,7 @@ TextureImporter:
         x: 1
         y: 30
         width: 9
-        height: 18
+        height: 17
       alignment: 9
       pivot: {x: 0.5, y: 0.525}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +141,8 @@ TextureImporter:
       name: Rink
       rect:
         serializedVersion: 2
-        x: 1
-        y: 16
+        x: 12
+        y: 30
         width: 9
         height: 13
       alignment: 9
@@ -159,7 +160,7 @@ TextureImporter:
         height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 2, y: 0, z: 2, w: 0}
+      border: {x: 3, y: 0, z: 3, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2

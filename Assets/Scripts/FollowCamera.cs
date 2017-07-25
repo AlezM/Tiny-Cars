@@ -11,7 +11,7 @@ public class FollowCamera : MonoBehaviour {
             Debug.LogWarning("Target is NULL.");
     }
 
-    void LateUpdate () {
+    void Update () {
         if (target == null)
             return;
 
