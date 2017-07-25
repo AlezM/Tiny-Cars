@@ -43,8 +43,8 @@ public class RoadLineEditor : Editor {
 		Handles.color = Color.blue;
 		Handles.DrawCube (0, roadLine.end, Quaternion.identity, 0.2f * size);
 
-		Handles.color = Color.gray;
-		Handles.ArrowHandleCap (0, roadLine.start, Quaternion.LookRotation (roadLine.end - roadLine.start), 0.75f * size, EventType.Repaint);
+		Handles.color = Color.black;
+		Handles.ArrowHandleCap (0, roadLine.start, Quaternion.LookRotation (roadLine.end - roadLine.start), 0.6f * size, EventType.Repaint);
 
 		roadLine.end = Handles.PositionHandle (roadLine.end, Quaternion.identity);
 

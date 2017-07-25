@@ -25,7 +25,7 @@ public class RoadCreator : MonoBehaviour {
 
     public void Start() {
         CreateSpawns();
-    //    FindObjectOfType<CarSpawner>().spawnPoints = spawnPoints;
+    //  FindObjectOfType<CarSpawner>().spawnPoints = spawnPoints;
     }
 
     public void CreateRoad() {

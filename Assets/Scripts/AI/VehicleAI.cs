@@ -11,6 +11,8 @@ public class VehicleAI : MonoBehaviour {
 	VehicleMotor motor;
 	Transform vehiclePivot;
 	int movingDiraction = 1; // Forward = 1, backward = -1;
+	RoadManager roadManager;
+	public RoadLine currentLine;
 
 	void Start () {
 		Debug.Log("Hello creator!");
@@ -20,26 +22,35 @@ public class VehicleAI : MonoBehaviour {
 			vehiclePivot = transform.GetChild (0);
 		else
 			vehiclePivot = transform;
+
+	//	roadManager = RoadManager.Instance ();
+
+		targetPosition = currentLine.end;
 	}
 
 	void FixedUpdate () {
 		if (!targetReached) {
+			TargetController ();
 			Movement ();
 			Rotation ();
 		}
 	}
 
+	void TargetController () {
+		targetPosition = currentLine.NearestPoint (vehiclePivot.position, 1);
+	}
+
 	void Movement () {
-		float distance = Vector3.Distance (targetPosition, vehiclePivot.position);
+		float distance = Vector2.Distance (vehiclePivot.position, currentLine.end); //Vector3.Distance (targetPosition, vehiclePivot.position);
 		float speed = 1; //TODO
 
-		movingDiraction = (Vector3.Angle(transform.up, (targetPosition - vehiclePivot.position).normalized) < 100 )? 1 : -1;
+		movingDiraction = (Vector3.Angle(transform.up, (targetPosition - vehiclePivot.position).normalized) < 110 )? 1 : -1;
 		if (distance > 0.2f) {
 			motor.SetSpeed (speed * movingDiraction);
 			targetReached = false;
 		} 
 		else {
-			motor.SetSpeed (0);
+			motor.SetSpeed (0);	
 			targetReached = true;
 		}
 	}

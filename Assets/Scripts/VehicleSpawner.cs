@@ -14,7 +14,7 @@ public class VehicleSpawner : MonoBehaviour {
     public Transform vehicleContainer;
 
     [HideInInspector]
-    public Vector3[] spawnPoints = null;
+	public RoadLine[] roadLines = null;
 
 	private static VehicleSpawner vehicleSpawner;
 
@@ -22,20 +22,18 @@ public class VehicleSpawner : MonoBehaviour {
 		if (!vehicleSpawner) {
 			vehicleSpawner = (VehicleSpawner)FindObjectOfType (typeof(VehicleSpawner));
 			if (!vehicleSpawner)
-				Debug.LogError ("VehicleSpawner does not exist!!!");
+				Debug.LogWarning ("VehicleSpawner does not exist!!!");
 		}
 
 		return vehicleSpawner;
 	}
 
-	public void StartSpawn (Vector3[] points, float time) {
-		spawnPoints = points;
-		CancelInvoke("SpawnVehicle");
-		InvokeRepeating("SpawnVehicle", 0, time);
+	public void SetSpawnPoints (RoadLine[] lines) {
+		roadLines = lines;
 	}
 
 	public void StartSpawn (float time) {
-		if (spawnPoints == null) {
+		if (roadLines == null) {
 			Debug.LogError ("SpawnPoints is NULL!!!");
 			return;
 		}
@@ -48,7 +46,7 @@ public class VehicleSpawner : MonoBehaviour {
 	}
 
     void SpawnVehicle() {
-		if (spawnPoints == null) {
+		if (roadLines == null) {
 			Debug.LogError ("SpawnPoints is NULL!!!");
 			CancelInvoke ("SpawnVehicle");
 		}
@@ -58,13 +56,14 @@ public class VehicleSpawner : MonoBehaviour {
 			return;
 		}
 
-		int spawnPointIndex = Random.Range (0, spawnPoints.Length);
+		int spawnPointIndex = Random.Range (0, roadLines.Length);
 		GameObject vehicle_GO = (GameObject) Instantiate (
 			vehiclePrefabs [Random.Range (0, vehiclePrefabs.Length)],
-			spawnPoints [spawnPointIndex],
-			((spawnPointIndex + 1 > spawnPoints.Length / 2) ? Quaternion.Euler (0, 0, 0) : Quaternion.Euler (0, 0, 180)),
+			roadLines [spawnPointIndex].start,
+			((spawnPointIndex + 1 > roadLines.Length / 2) ? Quaternion.Euler (0, 0, 0) : Quaternion.Euler (0, 0, 180)),
 			vehicleContainer
 		);
-		vehicle_GO.GetComponent<SimpleAI> ().SetUp (spawnPoints, spawnPointIndex);	
+	
+	//	vehicle_GO.GetComponent<VehicleAI> ().SetUp (roadLines[], spawnPointIndex);	
     }
 }

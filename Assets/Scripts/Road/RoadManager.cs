@@ -4,28 +4,6 @@ using UnityEngine;
 
 public class RoadManager : MonoBehaviour {
 
-	class RoadLine {
-		public Vector2 start;
-		public Vector2 end;
-
-		public RoadLine () {
-			start = Vector2.zero;
-			end = Vector2.zero;
-		}
-
-		public RoadLine (Vector2 _start, Vector2 _end) {
-			start = _start;
-			end = _end;
-		}
-
-		public float Distance (Vector3 other) {
-			return (
-				Mathf.Abs ((end.y - start.y) * other.x - (end.x - start.x) * other.y + end.x * start.y - end.y * start.x) /
-				Mathf.Sqrt ((end.y - start.y) * (end.y - start.y) + (end.x - start.x) * (end.x - start.x))
-			);
-		}
-	}
-
 	[Header("Main Settings")]
 	[Range(1, 100)]
 	public int length = 10;
@@ -53,7 +31,7 @@ public class RoadManager : MonoBehaviour {
 		if (!roadManager) {
 			roadManager = (RoadManager)FindObjectOfType (typeof(RoadManager));
 			if (!roadManager)
-				Debug.LogError ("RoadManager does not exist!!!");
+				Debug.LogWarning ("RoadManager does not exist!!!");
 		}
 
 		return roadManager;
@@ -62,9 +40,8 @@ public class RoadManager : MonoBehaviour {
 	void Start() {
 		CreateRoadGraphics ();
 		CreateRoadWayPoints ();
+		SetSpawnPoint ();
 	}
-
-
 
 	void CreateRoadGraphics () {
 		detailsContainer = (new GameObject()).transform;
@@ -109,6 +86,19 @@ public class RoadManager : MonoBehaviour {
 				this.transform.position - Vector3.up * length / 2 - Vector3.right * ((i + 0.5f) * lineWidth + middleSeparatorWidth / 2)
 			);
 		}
+	}
+
+	void SetSpawnPoint () {
+		VehicleSpawner vehicleSpawner = VehicleSpawner.Instance ();
+		if (vehicleSpawner == null)
+			return;
+
+		RoadLine[] points = new RoadLine[width * 2];
+		for (int i = 0; i < width; i++) {
+			points [i] = rightRoadLines [i];
+			points [width - 1 + i] = leftRoadLines [i];
+		}
+		vehicleSpawner.SetSpawnPoints (points);
 	}
 
 	void OnDrawGizmos () {
